@@ -1,24 +1,36 @@
 module.exports = async (client, message) => {
-  const text =
-    '┌─────「 *SHINJI* 」\n' +
-    '│\n' +
-    '│  *!youtube* <palavras-chave>\n' +
-    '│  Busca e envia um vídeo do YouTube\n' +
-    '│\n' +
-    '│  *!pinterest* <url1, url2, ...>\n' +
-    '│  Baixa fotos do Pinterest (máx. 8)\n' +
-    '│\n' +
-    '│  *!s*\n' +
-    '│  Transforma uma imagem em figurinha\n' +
-    '│\n' +
-    '│  *!ping*\n' +
-    '│  Mostra status e latência do bot\n' +
-    '│\n' +
-    '│  *!menu*\n' +
-    '│  Mostra esta lista de comandos\n' +
-    '│\n' +
-    '└──────────────────\n' +
-    'Desenvolvido por @prrxkzz';
+    const contact = await message.getContact();
 
-  await message.reply(text);
+    const nome = contact.pushname || contact.name || "Usuário";
+
+    const agora = new Date();
+
+    const hora = agora.toLocaleTimeString("pt-BR", {
+        hour: "2-digit",
+        minute: "2-digit"
+    });
+
+    const data = agora.toLocaleDateString("pt-BR");
+
+    const menu = `🌙 *SHINJI BOT*
+
+👤 *@${nome}*
+🟢 Online
+🕒 ${hora}
+📅 ${data}
+
+╭─ 📥 Downloads
+│ 🎵 !youtube
+│ 📌 !pinterest
+│ 🖼️ !s
+╰──────────
+
+╭─ ⚙️ Utilidades
+│ 📡 !ping
+│ 📖 !menu
+╰──────────
+
+💜 *Versão:* v1.0.0`;
+
+    await message.reply(menu);
 };
