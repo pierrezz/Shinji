@@ -7,7 +7,7 @@ const { ytdlp } = require('../lib/ytdlp');
 
 module.exports = async (client, message, query) => {
   if (!query) {
-    await message.reply('Use: !youtube <palavras-chave>\nExemplo: !youtube Jazzghost Terror');
+    await message.reply('Use: !youtube <palavras-chave>\nExemplo: !youtube peppa pig em pt-br');
     return;
   }
 
