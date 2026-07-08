@@ -2,8 +2,6 @@
 
 A modern WhatsApp bot built with Node.js, featuring AI, moderation, entertainment, utility, and automation commands.
 
-Developed entirely by **@pxerre._**
-
 ---
 
 # Features
